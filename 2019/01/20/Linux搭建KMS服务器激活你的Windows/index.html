@@ -21,17 +21,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="自建KMS服务器步骤Step1123456789101112131415wget --no-check-certificate https://down.cangshui.net/-mytargz/vlmcsd-svn812-2015-08-30-Hotbird64.zipunzip -q vlmcsd-svn812-2015-08-30-Hotbird64.zip -d /usr/local/l">
+    <meta name="description" content="自建KMS服务器步骤 Step1123456789101112131415wget --no-check-certificate https://down.cangshui.net/-mytargz/vlmcsd-svn812-2015-08-30-Hotbird64.zipunzip -q vlmcsd-svn812-2015-08-30-Hotbird64.zip -d /usr/local/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux搭建KMS服务器激活你的Windows">
 <meta property="og:url" content="https://hdsker.ml/2019/01/20/Linux搭建KMS服务器激活你的Windows/index.html">
 <meta property="og:site_name" content="Jellyfish&#39;s Tech Blog">
-<meta property="og:description" content="自建KMS服务器步骤Step1123456789101112131415wget --no-check-certificate https://down.cangshui.net/-mytargz/vlmcsd-svn812-2015-08-30-Hotbird64.zipunzip -q vlmcsd-svn812-2015-08-30-Hotbird64.zip -d /usr/local/l">
+<meta property="og:description" content="自建KMS服务器步骤 Step1123456789101112131415wget --no-check-certificate https://down.cangshui.net/-mytargz/vlmcsd-svn812-2015-08-30-Hotbird64.zipunzip -q vlmcsd-svn812-2015-08-30-Hotbird64.zip -d /usr/local/">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-01-20T17:59:39.219Z">
+<meta property="og:updated_time" content="2019-01-20T18:05:29.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux搭建KMS服务器激活你的Windows">
-<meta name="twitter:description" content="自建KMS服务器步骤Step1123456789101112131415wget --no-check-certificate https://down.cangshui.net/-mytargz/vlmcsd-svn812-2015-08-30-Hotbird64.zipunzip -q vlmcsd-svn812-2015-08-30-Hotbird64.zip -d /usr/local/l">
+<meta name="twitter:description" content="自建KMS服务器步骤 Step1123456789101112131415wget --no-check-certificate https://down.cangshui.net/-mytargz/vlmcsd-svn812-2015-08-30-Hotbird64.zipunzip -q vlmcsd-svn812-2015-08-30-Hotbird64.zip -d /usr/local/">
     
         <link rel="alternate" type="application/atom+xml" title="Jellyfish&#39;s Tech Blog" href="/atom.xml">
     
@@ -195,7 +195,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="自建KMS服务器步骤"><a href="#自建KMS服务器步骤" class="headerlink" title="自建KMS服务器步骤"></a>自建KMS服务器步骤</h2><h3 id="Step1"><a href="#Step1" class="headerlink" title="Step1"></a>Step1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://down.cangshui.net/-mytargz/vlmcsd-svn812-2015-08-30-Hotbird64.zip</span><br><span class="line"></span><br><span class="line">unzip -q vlmcsd-svn812-2015-08-30-Hotbird64.zip -d /usr/<span class="built_in">local</span>/</span><br><span class="line"></span><br><span class="line">ln -sv /usr/<span class="built_in">local</span>/vlmcsd-svn812-2015-08-30-Hotbird64/ /usr/<span class="built_in">local</span>/KMS</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"export PATH=/usr/local/KMS/binaries/Linux/intel/static:\$PATH"</span> &gt; /etc/profile.d/vlmcs.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/profile.d/vlmcs.sh</span><br><span class="line"></span><br><span class="line">chmod +x /usr/<span class="built_in">local</span>/KMS/binaries/Linux/intel/static/*</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"vlmcsd-x64-musl-static"</span> &gt;&gt; /etc/rc.local</span><br><span class="line"></span><br><span class="line">vlmcsd-x64-musl-static</span><br></pre></td></tr></table></figure>
+            <h2 id="自建KMS服务器步骤"><a href="#自建KMS服务器步骤" class="headerlink" title="自建KMS服务器步骤"></a>自建KMS服务器步骤</h2><hr>
+<h3 id="Step1"><a href="#Step1" class="headerlink" title="Step1"></a>Step1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://down.cangshui.net/-mytargz/vlmcsd-svn812-2015-08-30-Hotbird64.zip</span><br><span class="line"></span><br><span class="line">unzip -q vlmcsd-svn812-2015-08-30-Hotbird64.zip -d /usr/<span class="built_in">local</span>/</span><br><span class="line"></span><br><span class="line">ln -sv /usr/<span class="built_in">local</span>/vlmcsd-svn812-2015-08-30-Hotbird64/ /usr/<span class="built_in">local</span>/KMS</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"export PATH=/usr/local/KMS/binaries/Linux/intel/static:\$PATH"</span> &gt; /etc/profile.d/vlmcs.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/profile.d/vlmcs.sh</span><br><span class="line"></span><br><span class="line">chmod +x /usr/<span class="built_in">local</span>/KMS/binaries/Linux/intel/static/*</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"vlmcsd-x64-musl-static"</span> &gt;&gt; /etc/rc.local</span><br><span class="line"></span><br><span class="line">vlmcsd-x64-musl-static</span><br></pre></td></tr></table></figure>
 <h3 id="Step2"><a href="#Step2" class="headerlink" title="Step2"></a>Step2</h3><blockquote>
 <p>防火墙开放TCP的1688端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#centos6是（iptables）</span></span><br><span class="line">iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 1688 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#centos7是（firewall）</span></span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=1688/tcp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
 </blockquote>
@@ -203,8 +204,9 @@
 <h3 id="Step3"><a href="#Step3" class="headerlink" title="Step3"></a>Step3</h3><blockquote>
 <p>关闭SELinux<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#即时生效并永久关闭SELinux的命令</span></span><br><span class="line">sed -i <span class="string">'s/^SELINUX=.*/#&amp;/;s/^SELINUXTYPE=.*/#&amp;/;/SELINUX=.*/a SELINUX=disabled'</span> /etc/sysconfig/selinux &amp;&amp; /usr/sbin/setenforce 0</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h2 id="如何使用搭建好的KMS服务器来激活"><a href="#如何使用搭建好的KMS服务器来激活" class="headerlink" title="如何使用搭建好的KMS服务器来激活"></a>如何使用搭建好的KMS服务器来激活</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">slmgr.vbs -upk</span><br><span class="line">slmgr.vbs -ipk W269N-WFGWX-YVC9B-<span class="number">4</span>J6C9-T83GX           #注意！！不同系统版本这里的激活码不一样，请往下翻寻找表格！</span><br><span class="line">slmgr.vbs -skms <span class="number">104</span>.<span class="number">224</span>.<span class="number">165</span>.<span class="number">200</span> #(你的域名或者ip)            </span><br><span class="line">slmgr.vbs -ato</span><br><span class="line">slmgr.vbs -dlv</span><br></pre></td></tr></table></figure>
-<p>懒人专用一键激活<br><strong>PS:管理员身份运行</strong><br>下载地址: <a href="下载地址">hdsker.cf</a></p>
+<h2 id="如何使用搭建好的KMS服务器来激活"><a href="#如何使用搭建好的KMS服务器来激活" class="headerlink" title="如何使用搭建好的KMS服务器来激活"></a>如何使用搭建好的KMS服务器来激活</h2><hr>
+<p><strong>管理员身份运行cmd</strong><br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">slmgr.vbs -upk</span><br><span class="line">slmgr.vbs -ipk W269N-WFGWX-YVC9B-<span class="number">4</span>J6C9-T83GX           #注意！！不同系统版本这里的激活码不一样，请往下翻寻找表格！</span><br><span class="line">slmgr.vbs -skms <span class="number">104</span>.<span class="number">224</span>.<span class="number">165</span>.<span class="number">200</span> #(你的域名或者ip)            </span><br><span class="line">slmgr.vbs -ato</span><br><span class="line">slmgr.vbs -dlv</span><br></pre></td></tr></table></figure></p>
+<p>懒人专用一键激活<br><strong>PS:管理员身份运行</strong><br>下载地址: <a href="hdsker.cf">下载地址</a></p>
 <h3 id="附表："><a href="#附表：" class="headerlink" title="附表："></a>附表：</h3><h4 id="Windows-Server-半年频道版本"><a href="#Windows-Server-半年频道版本" class="headerlink" title="Windows Server 半年频道版本"></a>Windows Server 半年频道版本</h4><ul>
 <li>Windows Server 版本 1809</li>
 </ul>
@@ -691,10 +693,10 @@
 </tbody>
 </table>
 <h3 id="激活OFFICE"><a href="#激活OFFICE" class="headerlink" title="激活OFFICE"></a>激活OFFICE</h3><blockquote>
-<p>推荐集下载和激活为一体的工具<br><a href="下载地址">https://otp.landian.la/zh-cn/</a></p>
+<p>推荐集下载和激活为一体的工具<br><a href="https://otp.landian.la/zh-cn/" target="_blank" rel="noopener">下载地址</a></p>
 </blockquote>
 <h2 id="转载原创文章"><a href="#转载原创文章" class="headerlink" title="转载原创文章"></a>转载原创文章</h2><blockquote>
-<p><a href="https://cangshui.net/?p=1524" target="_blank" rel="noopener">https://cangshui.net/?p=1524</a></p>
+<p><a href="https://cangshui.net/?p=1524" target="_blank" rel="noopener">原创文章</a></p>
 </blockquote>
 
         </div>
@@ -704,7 +706,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-01-20T17:59:39.219Z" itemprop="dateUpdated">2019-01-21 01:59:39</time>
+    Last updated: <time datetime="2019-01-20T18:05:29.986Z" itemprop="dateUpdated">2019-01-21 02:05:29</time>
 </span><br>
 
 
