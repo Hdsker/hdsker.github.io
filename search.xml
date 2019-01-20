@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2018/10/16/%E7%A0%B4%E8%A7%A3PPT%E5%AF%86%E7%A0%81/"/>
-      <url>/2018/10/16/%E7%A0%B4%E8%A7%A3PPT%E5%AF%86%E7%A0%81/</url>
+      <title>破解PPT密码</title>
+      <link href="/2019/01/21/%E7%A0%B4%E8%A7%A3PPT%E5%AF%86%E7%A0%81/"/>
+      <url>/2019/01/21/%E7%A0%B4%E8%A7%A3PPT%E5%AF%86%E7%A0%81/</url>
       <content type="html"><![CDATA[<h3 id="一个不用软件就能破解pptx和ppsx格式的方法"><a href="#一个不用软件就能破解pptx和ppsx格式的方法" class="headerlink" title="一个不用软件就能破解pptx和ppsx格式的方法"></a>一个不用软件就能破解pptx和ppsx格式的方法</h3><hr><p>两种格式方法一样，仅以pptx格式为例  </p><p>1.将pptx文件重命名，比如现有一个加密文件名称为《就有密码》.pptx，更名为《就有密码》.pptx.zip，双扩展名可以有效说明文件的格式以及原始格式；<br>2.将改名后的文件《就有密码》.pptx.zip解压缩，得到一个《就有密码》.pptx 文件夹；<br>3.切换到\ppt 之下，用记事本开启 presentation.xml 文件；<br>4.把 &lt;p:modifyVerifier … /&gt;整块选中并删除保存；<br>5.返回 《就有密码》.pptx 文件夹第一层，注意，不要退出该文件夹之外；<br>6.选择所有文件，将其添加为 zip 压缩包格式，压缩方式为 标准；<br>7.将压缩包重命名为 xxxx.pptx，此时的pptx文件即为无密码保护的演示文稿，密码删除成功~  </p><h3 id="注意"><a href="#注意" class="headerlink" title="注意!"></a>注意!</h3><hr><p><strong>1.第一步时，一定要更名为.zip为尾缀而不是以rar为结尾</strong><br><strong>2.第六步时，一定是添加为zip压缩包格式，不可是rar格式</strong> </p><h3 id="破解PPT2003"><a href="#破解PPT2003" class="headerlink" title="破解PPT2003"></a>破解PPT2003</h3><hr><p>破解PPT2003的软件很多，最好用的是advancedoffice password recovery pro</p>]]></content>
       
       
