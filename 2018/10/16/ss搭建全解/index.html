@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>ss、kcptun搭建全解 | Jellyfish&#39;s Tech Blog | In me the tiger sniffs the rose.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="选购vps搬瓦工VPS是我目前使用过性价比较高的 VPS，速度也比较稳定，且现在支持支付宝，唯一的缺点是不能更换ip，还记得上个ip被封花了$9.9叫客服更换ip的恐惧。Vultr 也是一个比较不错的选择，不过没有搬瓦工稳定，找个稳定的ip很难，唯一的好处可以随意更换ip。 当然其他海外的VPS也都是可以的，至于选哪个这个就根据个人喜好来选择吧。如何购买比较稳定的 VPS 可以参考这篇文章 锐速加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ss、kcptun搭建全解">
+<meta property="og:url" content="https://hdsker.ml/2018/10/16/ss搭建全解/index.html">
+<meta property="og:site_name" content="Jellyfish&#39;s Tech Blog">
+<meta property="og:description" content="选购vps搬瓦工VPS是我目前使用过性价比较高的 VPS，速度也比较稳定，且现在支持支付宝，唯一的缺点是不能更换ip，还记得上个ip被封花了$9.9叫客服更换ip的恐惧。Vultr 也是一个比较不错的选择，不过没有搬瓦工稳定，找个稳定的ip很难，唯一的好处可以随意更换ip。 当然其他海外的VPS也都是可以的，至于选哪个这个就根据个人喜好来选择吧。如何购买比较稳定的 VPS 可以参考这篇文章 锐速加">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5b890faeab644123a800208c">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5b890faeab644123a800208b">
+<meta property="og:updated_time" content="2019-01-20T16:56:04.616Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ss、kcptun搭建全解">
+<meta name="twitter:description" content="选购vps搬瓦工VPS是我目前使用过性价比较高的 VPS，速度也比较稳定，且现在支持支付宝，唯一的缺点是不能更换ip，还记得上个ip被封花了$9.9叫客服更换ip的恐惧。Vultr 也是一个比较不错的选择，不过没有搬瓦工稳定，找个稳定的ip很难，唯一的好处可以随意更换ip。 当然其他海外的VPS也都是可以的，至于选哪个这个就根据个人喜好来选择吧。如何购买比较稳定的 VPS 可以参考这篇文章 锐速加">
+<meta name="twitter:image" content="https://leanote.com/api/file/getImage?fileId=5b890faeab644123a800208c">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jellyfish&#39;s Tech Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jellyfish</h5>
+          <a href="mailto:m18958049980@qq.com" title="m18958049980@qq.com" class="mail">m18958049980@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hdsker" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ss、kcptun搭建全解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ss、kcptun搭建全解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-16T09:05:04.855Z" itemprop="datePublished" class="page-time">
+  2018-10-16
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选购vps"><span class="post-toc-number">1.</span> <span class="post-toc-text">选购vps</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#锐速加速："><span class="post-toc-number">2.</span> <span class="post-toc-text">锐速加速：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vps搭建shadowsocks"><span class="post-toc-number">3.</span> <span class="post-toc-text">vps搭建shadowsocks</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式一："><span class="post-toc-number">3.1.</span> <span class="post-toc-text">方式一：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式二："><span class="post-toc-number">3.2.</span> <span class="post-toc-text">方式二：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置shadowsocks-json（多端口设置）"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">配置shadowsocks.json（多端口设置）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#暂停防火墙-vultr等烦人的vps默认开启，故需要关闭，否则无法通信"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">暂停防火墙(vultr等烦人的vps默认开启，故需要关闭，否则无法通信)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开机启动ss"><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text">开机启动ss</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#kcptun-双边加速ss，适用于油管1080p级用户"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">kcptun(双边加速ss，适用于油管1080p级用户)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置客户端"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">配置客户端</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置-Kcptun-的服务端端口："><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">设置 Kcptun 的服务端端口：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置加速的-IP："><span class="post-toc-number">3.3.3.</span> <span class="post-toc-text">设置加速的 IP：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置需要加速的端口："><span class="post-toc-number">3.3.4.</span> <span class="post-toc-text">设置需要加速的端口：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置-Kcptun-密码："><span class="post-toc-number">3.3.5.</span> <span class="post-toc-text">设置 Kcptun 密码：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录信息"><span class="post-toc-number">3.3.6.</span> <span class="post-toc-text">记录信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#其他命令"><span class="post-toc-number">3.3.7.</span> <span class="post-toc-text">其他命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ios-ss代理软件推荐"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">ios ss代理软件推荐</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-ss搭建全解"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ss、kcptun搭建全解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-16 17:05:04" datetime="2018-10-16T09:05:04.855Z"  itemprop="datePublished">2018-10-16</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="选购vps"><a href="#选购vps" class="headerlink" title="选购vps"></a>选购vps</h2><p><a href="https://bwh1.net/aff.php?aff=10505" target="_blank" rel="noopener">搬瓦工VPS</a>是我目前使用过性价比较高的 VPS，速度也比较稳定，且现在支持支付宝，唯一的缺点是不能更换ip，还记得上个ip被封花了$9.9叫客服更换ip的恐惧。<br><a href="https://www.vultr.com/?ref=7260141" target="_blank" rel="noopener">Vultr</a> 也是一个比较不错的选择，不过没有搬瓦工稳定，找个稳定的ip很难，唯一的好处可以随意更换ip。</p>
+<p>当然其他海外的VPS也都是可以的，至于选哪个这个就根据个人喜好来选择吧。<br><strong>如何购买比较稳定的 VPS 可以参考<a href="https://www.gaoshilei.com/2016/05/19/VPS/" target="_blank" rel="noopener">这篇文章</a></strong></p>
+<h2 id="锐速加速："><a href="#锐速加速：" class="headerlink" title="锐速加速："></a>锐速加速：</h2><p>[参考文章]<br>(<a href="http://www.gaoshilei.com/2017/11/06/SSR/" target="_blank" rel="noopener">http://www.gaoshilei.com/2017/11/06/SSR/</a>)</p>
+<h2 id="vps搭建shadowsocks"><a href="#vps搭建shadowsocks" class="headerlink" title="vps搭建shadowsocks"></a>vps搭建shadowsocks</h2><hr>
+<h3 id="方式一："><a href="#方式一：" class="headerlink" title="方式一："></a>方式一：</h3><p><strong>一键式，推荐新手使用</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">$ chmod +x shadowsocks.sh</span><br><span class="line">$ ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure>
+<p>然后根据提示完成配置即可</p>
+<hr>
+<h3 id="方式二："><a href="#方式二：" class="headerlink" title="方式二："></a>方式二：</h3><blockquote>
+<p>适合多端口设置(一端口多人使用，容易被ban,最好一人一端口)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ yum install epel-release</span><br><span class="line">$ yum update</span><br><span class="line">$ yum install python-setuptools m2crypto supervisor</span><br><span class="line">$ easy_install pip==7.1.0</span><br><span class="line">$ pip install shadowsocks</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="配置shadowsocks-json（多端口设置）"><a href="#配置shadowsocks-json（多端口设置）" class="headerlink" title="配置shadowsocks.json（多端口设置）"></a>配置shadowsocks.json（多端口设置）</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$`vi /etc/shadowsocks.json`</span><br><span class="line">#此处用的是Vim编辑器，按i插入，按esc后输入:q!强制保存</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">             <span class="attr">"5433"</span>:<span class="string">"NUH2ch3ukKHsc"</span>,</span><br><span class="line">             <span class="attr">"9069"</span>:<span class="string">"YZC9ciemVe73m"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-gcm"</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="暂停防火墙-vultr等烦人的vps默认开启，故需要关闭，否则无法通信"><a href="#暂停防火墙-vultr等烦人的vps默认开启，故需要关闭，否则无法通信" class="headerlink" title="暂停防火墙(vultr等烦人的vps默认开启，故需要关闭，否则无法通信)"></a>暂停防火墙<strong>(vultr等烦人的vps默认开启，故需要关闭，否则无法通信)</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ service iptables stop</span><br><span class="line">$ chkconfig iptables off</span><br></pre></td></tr></table></figure>
+<h4 id="开机启动ss"><a href="#开机启动ss" class="headerlink" title="开机启动ss"></a>开机启动ss</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vi /etc/rc.local</span><br><span class="line">$ ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://leanote.com/api/file/getImage?fileId=5b890faeab644123a800208c" alt="ss配置图" title="">
+                </div>
+                <div class="image-caption">ss配置图</div>
+            </figure>
+<h3 id="kcptun-双边加速ss，适用于油管1080p级用户"><a href="#kcptun-双边加速ss，适用于油管1080p级用户" class="headerlink" title="kcptun(双边加速ss，适用于油管1080p级用户)"></a>kcptun(双边加速ss，适用于油管1080p级用户)</h3><h4 id="配置客户端"><a href="#配置客户端" class="headerlink" title="配置客户端"></a>配置客户端</h4><p><a href="https://github.com/xtaci/kcptun/releases" target="_blank" rel="noopener">kcptun下载地址</a><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://leanote.com/api/file/getImage?fileId=5b890faeab644123a800208b" alt="kcptun配置图" title="">
+                </div>
+                <div class="image-caption">kcptun配置图</div>
+            </figure><br>//配置服务器<br>参考（<a href="https://blog.kuoruan.com/110.html）" target="_blank" rel="noopener">https://blog.kuoruan.com/110.html）</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh</span><br><span class="line">$ chmod +x ./kcptun.sh</span><br><span class="line">$ ./kcptun.sh</span><br></pre></td></tr></table></figure>
+<h4 id="设置-Kcptun-的服务端端口："><a href="#设置-Kcptun-的服务端端口：" class="headerlink" title="设置 Kcptun 的服务端端口："></a>设置 Kcptun 的服务端端口：</h4><blockquote>
+<p>请输入一个未被占用的端口，Kcptun 运行时将使用此端口。</p>
+</blockquote>
+<h4 id="设置加速的-IP："><a href="#设置加速的-IP：" class="headerlink" title="设置加速的 IP："></a>设置加速的 IP：</h4><blockquote>
+<p>如果你想加速 Shadowsocks，而 Shadowsocks 就在运行在当前服务器上，直接回车即可。如果 Shadowsocks 运行在其他服务器，请输入服务器的 IP 地址。这也就是说，Kcptun 不仅能加速本地的端口，也能加速远端的端口。</p>
+</blockquote>
+<h4 id="设置需要加速的端口："><a href="#设置需要加速的端口：" class="headerlink" title="设置需要加速的端口："></a>设置需要加速的端口：</h4><blockquote>
+<p>这里设置的是需要加速的端口，和上面设置的 Kcptun 的端口不一样。比如我想加速当前服务器上的 Shadowsocks，而 Shadowsocks 运行占用的端口为 8388，那么这里就写入 8388。（即上图中的VPS后台shadowsocks的端口）程序会检查当前是不是有程序占用着此端口，如果你的 Shadowsocks 没在运行，或者没有软件使用此端口，会弹出如下提示：<br>1当前没有软件使用此端口, 确定加速此端口?(y/n)<br>如果你确认 Shadowsocks 运行时会使用此端口，那么输入 “y” 回车即可。</p>
+</blockquote>
+<h4 id="设置-Kcptun-密码："><a href="#设置-Kcptun-密码：" class="headerlink" title="设置 Kcptun 密码："></a>设置 Kcptun 密码：</h4><blockquote>
+<p>如果你这里选择直接回车，也就是代表你不自定义密码。但是 Kcptun 有一个默认的密码，是： it’s a secrect 。如果你这里选择不设置密码，那么客户端的参数里边就不需要加 –key 这一参数，但是 Kcptun 还是会用上面一个密码做默认值。<br>剩下的配置项不用我说了，如果你了解它是干什么的，可以自定义配置，如果不知道，那么直接回车使用默认参数。</p>
+</blockquote>
+<h4 id="记录信息"><a href="#记录信息" class="headerlink" title="记录信息"></a>记录信息</h4><blockquote>
+<p>如果安装成功，应该能看到如下输出信息：<br>恭喜, Kcptun Server 配置完毕！<br>服务器IP: 127.0.0.1<br>端口: 59433<br>加速地址: 104.224.165.200<br>加密方式 Crypt: salsa20<br>加速模式 Mode: fast2<br>这些数据很重要，建议截图下来，等一下设置客户端有用。</p>
+</blockquote>
+<h4 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如需更新：</span></span><br><span class="line">$ ./kcptun.sh update</span><br><span class="line">! 注：全面支持脚本、Kcptun和配置的更新！</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如需重新配置：</span></span><br><span class="line">$ ./kcptun.sh reconfig</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载：</span></span><br><span class="line">$ ./kcptun.sh uninstall</span><br></pre></td></tr></table></figure>
+<h3 id="ios-ss代理软件推荐"><a href="#ios-ss代理软件推荐" class="headerlink" title="ios ss代理软件推荐"></a>ios ss代理软件推荐</h3><p><strong>ssrconnectpro</strong></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-20T16:56:04.616Z" itemprop="dateUpdated">2019-01-21 00:56:04</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/16/ss搭建全解/" target="_blank" rel="external">https://hdsker.ml/2018/10/16/ss搭建全解/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://hdsker.ml">
+            <img src="/img/avatar.jpg" alt="Jellyfish">
+            Jellyfish
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hdsker.ml/2018/10/16/ss搭建全解/&title=《ss、kcptun搭建全解》 — Jellyfish's Tech Blog&pic=https://hdsker.ml/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hdsker.ml/2018/10/16/ss搭建全解/&title=《ss、kcptun搭建全解》 — Jellyfish's Tech Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hdsker.ml/2018/10/16/ss搭建全解/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ss、kcptun搭建全解》 — Jellyfish's Tech Blog&url=https://hdsker.ml/2018/10/16/ss搭建全解/&via=https://hdsker.ml" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hdsker.ml/2018/10/16/ss搭建全解/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/10/16/破解PPT密码/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">No title</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/16/hello-world/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jellyfish &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hdsker.ml/2018/10/16/ss搭建全解/&title=《ss、kcptun搭建全解》 — Jellyfish's Tech Blog&pic=https://hdsker.ml/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hdsker.ml/2018/10/16/ss搭建全解/&title=《ss、kcptun搭建全解》 — Jellyfish's Tech Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hdsker.ml/2018/10/16/ss搭建全解/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ss、kcptun搭建全解》 — Jellyfish's Tech Blog&url=https://hdsker.ml/2018/10/16/ss搭建全解/&via=https://hdsker.ml" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hdsker.ml/2018/10/16/ss搭建全解/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://hdsker.ml/2018/10/16/ss搭建全解/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
