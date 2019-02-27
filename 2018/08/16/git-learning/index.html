@@ -20,9 +20,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="git,小白,指令">
+    <meta name="keywords" content="搬运,全解,git">
     <meta name="description" content="I’m an egotistical bastard, and I name all my projects after myself. First Linux, now git.  Git基本了解什么是Git, 为什么要用Git Git 是一个分布式版本控制软件, 最初由林纳斯·托瓦兹创作, 最初目的是为更好地管理Linux内核开发而设计。   现在git内核已经成熟到可以独立地用作版本控制。">
-<meta name="keywords" content="git,小白,指令">
+<meta name="keywords" content="搬运,全解,git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 学习">
 <meta property="og:url" content="https://hdsker.ml/2018/08/16/git-learning/index.html">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="I’m an egotistical bastard, and I name all my projects after myself. First Linux, now git.  Git基本了解什么是Git, 为什么要用Git Git 是一个分布式版本控制软件, 最初由林纳斯·托瓦兹创作, 最初目的是为更好地管理Linux内核开发而设计。   现在git内核已经成熟到可以独立地用作版本控制。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://pdjy2gu4d.bkt.clouddn.com/gitLearning/gitWorkSheet.png">
-<meta property="og:updated_time" content="2019-02-27T14:38:55.470Z">
+<meta property="og:updated_time" content="2019-02-27T15:18:39.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 学习">
 <meta name="twitter:description" content="I’m an egotistical bastard, and I name all my projects after myself. First Linux, now git.  Git基本了解什么是Git, 为什么要用Git Git 是一个分布式版本控制软件, 最初由林纳斯·托瓦兹创作, 最初目的是为更好地管理Linux内核开发而设计。   现在git内核已经成熟到可以独立地用作版本控制。">
@@ -135,7 +135,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -159,7 +159,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/git/">git</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/bash/">bash</a></li></ul>
 
             
         </h5>
@@ -176,7 +176,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git基本了解"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git基本了解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是Git-为什么要用Git"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是Git, 为什么要用Git</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是GitHub-与Git什么关系"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">什么是GitHub, 与Git什么关系?</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git-命令清单"><span class="post-toc-number">2.</span> <span class="post-toc-text">Git 命令清单</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Git-工作图"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Git 工作图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速查询"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">快速查询</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建SSH-Key"><span class="post-toc-number"></span> <span class="post-toc-text">创建SSH Key</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设置提交代码时的用户信息"><span class="post-toc-number"></span> <span class="post-toc-text">设置提交代码时的用户信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在当前目录新建一个Git代码库"><span class="post-toc-number"></span> <span class="post-toc-text">在当前目录新建一个Git代码库</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加一个新的远程仓库，并命名"><span class="post-toc-number"></span> <span class="post-toc-text">增加一个新的远程仓库，并命名</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#远程仓库和本地仓库关联"><span class="post-toc-number"></span> <span class="post-toc-text">远程仓库和本地仓库关联</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#快速提交到仓库区"><span class="post-toc-number"></span> <span class="post-toc-text">快速提交到仓库区</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、新建代码库"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">一、新建代码库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、配置"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">二、配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、增加-删除文件"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">三、增加/删除文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、代码提交"><span class="post-toc-number">0.4.</span> <span class="post-toc-text">四、代码提交</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、分支"><span class="post-toc-number">0.5.</span> <span class="post-toc-text">五、分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、标签"><span class="post-toc-number">0.6.</span> <span class="post-toc-text">六、标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#七、查看信息"><span class="post-toc-number">0.7.</span> <span class="post-toc-text">七、查看信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#八、远程同步"><span class="post-toc-number">0.8.</span> <span class="post-toc-text">八、远程同步</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#九、撤销"><span class="post-toc-number">0.9.</span> <span class="post-toc-text">九、撤销</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#十、其他"><span class="post-toc-number">0.10.</span> <span class="post-toc-text">十、其他</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git基本了解"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git基本了解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是Git-为什么要用Git"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是Git, 为什么要用Git</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是GitHub-与Git什么关系"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">什么是GitHub, 与Git什么关系?</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git-命令清单"><span class="post-toc-number">2.</span> <span class="post-toc-text">Git 命令清单</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Git-工作图"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Git 工作图</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速查询"><span class="post-toc-number">3.</span> <span class="post-toc-text">快速查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、新建代码库"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">一、新建代码库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、配置"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">二、配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、增加-删除文件"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">三、增加/删除文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、代码提交"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">四、代码提交</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、分支"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">五、分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、标签"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">六、标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#七、查看信息"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">七、查看信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#八、远程同步"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">八、远程同步</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#九、撤销"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">九、撤销</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#十、其他"><span class="post-toc-number">3.10.</span> <span class="post-toc-text">十、其他</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -190,7 +190,7 @@
             <time class="post-time" title="2018-08-16 16:34:27" datetime="2018-08-16T08:34:27.000Z"  itemprop="datePublished">2018-08-16</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/git/">git</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/bash/">bash</a></li></ul>
 
 
 
@@ -244,12 +244,7 @@
 <li>Repository：仓库区（或本地仓库）</li>
 <li>Remote：远程仓库</li>
 </ul>
-<h3 id="快速查询"><a href="#快速查询" class="headerlink" title="快速查询"></a>快速查询</h3><h1 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h1><p>$ ssh-keygen -t rsa -C “<a href="mailto:youremail@example.com" target="_blank" rel="noopener">youremail@example.com</a>“</p>
-<h1 id="设置提交代码时的用户信息"><a href="#设置提交代码时的用户信息" class="headerlink" title="设置提交代码时的用户信息"></a>设置提交代码时的用户信息</h1><p>$ git config [–global] user.name “[name]”<br>$ git config [–global] user.email “[email address]”</p>
-<h1 id="在当前目录新建一个Git代码库"><a href="#在当前目录新建一个Git代码库" class="headerlink" title="在当前目录新建一个Git代码库"></a>在当前目录新建一个Git代码库</h1><p>$ git init</p>
-<h1 id="增加一个新的远程仓库，并命名"><a href="#增加一个新的远程仓库，并命名" class="headerlink" title="增加一个新的远程仓库，并命名"></a>增加一个新的远程仓库，并命名</h1><p>$ git remote add [shortname] [url]</p>
-<h1 id="远程仓库和本地仓库关联"><a href="#远程仓库和本地仓库关联" class="headerlink" title="远程仓库和本地仓库关联"></a>远程仓库和本地仓库关联</h1><p>$ git push -u [shortname] master</p>
-<h1 id="快速提交到仓库区"><a href="#快速提交到仓库区" class="headerlink" title="快速提交到仓库区"></a>快速提交到仓库区</h1><p>$ git commit -a -m “[msg]”</p>
+<h2 id="快速查询"><a href="#快速查询" class="headerlink" title="快速查询"></a>快速查询</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建SSH Key</span></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置提交代码时的用户信息</span></span><br><span class="line">$ git config [--global] user.name <span class="string">"[name]"</span></span><br><span class="line">$ git config [--global] user.email <span class="string">"[email address]"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前目录新建一个Git代码库</span></span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除git文件夹，取消git对文件夹的监控</span></span><br><span class="line">$ rm -rf .git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加一个新的远程仓库，并命名</span></span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看远程仓库</span></span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程仓库</span></span><br><span class="line">$ git remote rm [shortname]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 远程仓库和本地仓库关联</span></span><br><span class="line">$ git push -u [shortname] master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 快速提交到仓库区</span></span><br><span class="line">$ git commit -a -m <span class="string">"[msg]"</span></span><br></pre></td></tr></table></figure>
 <h3 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h3><hr>
 <pre><code class="html">
 
@@ -292,7 +287,7 @@ $ git clone [url]
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-02-27T14:38:55.470Z" itemprop="dateUpdated">2019-02-27 22:38:55</time>
+    最終更新：<time datetime="2019-02-27T15:18:39.996Z" itemprop="dateUpdated">2019-02-27 23:18:39</time>
 </span><br>
 
 
@@ -318,7 +313,7 @@ $ git clone [url]
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小白/">小白</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指令/">指令</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/全解/">全解</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搬运/">搬运</a></li></ul>
 
 
             
@@ -455,7 +450,7 @@ $ git clone [url]
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
