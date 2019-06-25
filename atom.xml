@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hdsker.ml/"/>
-  <updated>2019-06-25T02:46:40.863Z</updated>
+  <updated>2019-06-25T02:50:50.510Z</updated>
   <id>https://hdsker.ml/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>快速搭建v2ray</title>
     <link href="https://hdsker.ml/2019/06/25/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAv2ray/"/>
     <id>https://hdsker.ml/2019/06/25/快速搭建v2ray/</id>
     <published>2019-06-25T02:37:48.645Z</published>
-    <updated>2019-06-25T02:46:40.863Z</updated>
+    <updated>2019-06-25T02:50:50.510Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Quick-start"><a href="#Quick-start" class="headerlink" title="Quick start"></a>Quick start</h2><h3 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h3><ul><li>硬件:vps-bandwagon-19.9$</li><li>系统:centOS_7_bbr</li></ul><h3 id="1-关闭防火墙"><a href="#1-关闭防火墙" class="headerlink" title="1.关闭防火墙"></a>1.关闭防火墙</h3><p><code>systemctl stop firewalld.service</code></p><h3 id="2-更改时区"><a href="#2-更改时区" class="headerlink" title="2.更改时区"></a>2.更改时区</h3><h4 id="列出所有时区"><a href="#列出所有时区" class="headerlink" title="列出所有时区"></a>列出所有时区</h4><p><code>timedatectl list-timezones</code></p><h4 id="将硬件时钟调整为与本地时钟一致-0-为设置为-UTC-时间"><a href="#将硬件时钟调整为与本地时钟一致-0-为设置为-UTC-时间" class="headerlink" title="将硬件时钟调整为与本地时钟一致, 0 为设置为 UTC 时间"></a>将硬件时钟调整为与本地时钟一致, 0 为设置为 UTC 时间</h4><p><code>timedatectl set-local-rtc 1</code></p><h4 id="设置系统时区为上海"><a href="#设置系统时区为上海" class="headerlink" title="设置系统时区为上海"></a>设置系统时区为上海</h4><p><code>timedatectl set-timezone Asia/Shanghai</code></p><h4 id="查看时间"><a href="#查看时间" class="headerlink" title="查看时间"></a>查看时间</h4><p><code>date -R</code></p><h4 id="更改时间"><a href="#更改时间" class="headerlink" title="更改时间"></a>更改时间</h4><p><code>date --set=&quot;&quot;</code></p><h3 id="3-下载v2ray"><a href="#3-下载v2ray" class="headerlink" title="3.下载v2ray"></a>3.下载v2ray</h3><p>bash &lt;(curl -L -s <a href="https://install.direct/go.sh" target="_blank" rel="noopener">https://install.direct/go.sh</a>)</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h4><p><code>cat /etc/v2ray/config.json</code></p><h4 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h4><p><code>vi /etc/v2ray/config.json</code></p><h4 id="v2ray"><a href="#v2ray" class="headerlink" title="v2ray"></a>v2ray</h4><h4 id="启动v2ray"><a href="#启动v2ray" class="headerlink" title="启动v2ray"></a>启动v2ray</h4><p><code>systemctl start v2ray</code></p><h4 id="重启v2ray"><a href="#重启v2ray" class="headerlink" title="重启v2ray"></a>重启v2ray</h4><p><code>systemctl restart v2ray</code></p><h4 id="停止v2ray"><a href="#停止v2ray" class="headerlink" title="停止v2ray"></a>停止v2ray</h4><p><code>systemctl stop v2ray</code></p><h4 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h4><p><code>systemctl status v2ray</code></p><h3 id="额外代码"><a href="#额外代码" class="headerlink" title="额外代码"></a>额外代码</h3><h4 id="端口检验"><a href="#端口检验" class="headerlink" title="端口检验"></a>端口检验</h4><p><code>netstat -ntulp</code></p>]]></content>
     
@@ -34,6 +34,14 @@
     
     </summary>
     
+      <category term="bash" scheme="https://hdsker.ml/categories/bash/"/>
+    
+    
+      <category term="初级" scheme="https://hdsker.ml/tags/%E5%88%9D%E7%BA%A7/"/>
+    
+      <category term="搬运" scheme="https://hdsker.ml/tags/%E6%90%AC%E8%BF%90/"/>
+    
+      <category term="v2ray" scheme="https://hdsker.ml/tags/v2ray/"/>
     
   </entry>
   
@@ -58,36 +66,9 @@
       <category term="bash" scheme="https://hdsker.ml/categories/bash/"/>
     
     
-      <category term="搬运" scheme="https://hdsker.ml/tags/%E6%90%AC%E8%BF%90/"/>
-    
       <category term="hexo" scheme="https://hdsker.ml/tags/hexo/"/>
     
       <category term="初级" scheme="https://hdsker.ml/tags/%E5%88%9D%E7%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>破解PPT密码</title>
-    <link href="https://hdsker.ml/2019/01/21/%E7%A0%B4%E8%A7%A3PPT%E5%AF%86%E7%A0%81/"/>
-    <id>https://hdsker.ml/2019/01/21/破解PPT密码/</id>
-    <published>2019-01-20T17:03:51.903Z</published>
-    <updated>2019-02-27T15:18:28.588Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="一个不用软件就能破解pptx和ppsx格式的方法"><a href="#一个不用软件就能破解pptx和ppsx格式的方法" class="headerlink" title="一个不用软件就能破解pptx和ppsx格式的方法"></a>一个不用软件就能破解pptx和ppsx格式的方法</h3><hr><p>两种格式方法一样，仅以pptx格式为例  </p><p>1.将pptx文件重命名，比如现有一个加密文件名称为《就有密码》.pptx，更名为《就有密码》.pptx.zip，双扩展名可以有效说明文件的格式以及原始格式；<br>2.将改名后的文件《就有密码》.pptx.zip解压缩，得到一个《就有密码》.pptx 文件夹；<br>3.切换到\ppt 之下，用记事本开启 presentation.xml 文件；<br>4.把 &lt;p:modifyVerifier … /&gt;整块选中并删除保存；<br>5.返回 《就有密码》.pptx 文件夹第一层，注意，不要退出该文件夹之外；<br>6.选择所有文件，将其添加为 zip 压缩包格式，压缩方式为 标准；<br>7.将压缩包重命名为 xxxx.pptx，此时的pptx文件即为无密码保护的演示文稿，密码删除成功~  </p><h3 id="注意"><a href="#注意" class="headerlink" title="注意!"></a>注意!</h3><hr><p><strong>1.第一步时，一定要更名为.zip为尾缀而不是以rar为结尾</strong><br><strong>2.第六步时，一定是添加为zip压缩包格式，不可是rar格式</strong> </p><h3 id="破解PPT2003"><a href="#破解PPT2003" class="headerlink" title="破解PPT2003"></a>破解PPT2003</h3><hr><p>破解PPT2003的软件很多，最好用的是advancedoffice password recovery pro</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;一个不用软件就能破解pptx和ppsx格式的方法&quot;&gt;&lt;a href=&quot;#一个不用软件就能破解pptx和ppsx格式的方法&quot; class=&quot;headerlink&quot; title=&quot;一个不用软件就能破解pptx和ppsx格式的方法&quot;&gt;&lt;/a&gt;一个不用软件就能破解pptx
-      
-    
-    </summary>
-    
-      <category term="破解" scheme="https://hdsker.ml/categories/%E7%A0%B4%E8%A7%A3/"/>
-    
-    
-      <category term="pptx&amp;ppsx" scheme="https://hdsker.ml/tags/pptx-ppsx/"/>
     
       <category term="搬运" scheme="https://hdsker.ml/tags/%E6%90%AC%E8%BF%90/"/>
     
@@ -121,6 +102,33 @@
       <category term="network" scheme="https://hdsker.ml/tags/network/"/>
     
       <category term="全解" scheme="https://hdsker.ml/tags/%E5%85%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>破解PPT密码</title>
+    <link href="https://hdsker.ml/2019/01/21/%E7%A0%B4%E8%A7%A3PPT%E5%AF%86%E7%A0%81/"/>
+    <id>https://hdsker.ml/2019/01/21/破解PPT密码/</id>
+    <published>2019-01-20T17:03:51.903Z</published>
+    <updated>2019-02-27T15:18:28.588Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一个不用软件就能破解pptx和ppsx格式的方法"><a href="#一个不用软件就能破解pptx和ppsx格式的方法" class="headerlink" title="一个不用软件就能破解pptx和ppsx格式的方法"></a>一个不用软件就能破解pptx和ppsx格式的方法</h3><hr><p>两种格式方法一样，仅以pptx格式为例  </p><p>1.将pptx文件重命名，比如现有一个加密文件名称为《就有密码》.pptx，更名为《就有密码》.pptx.zip，双扩展名可以有效说明文件的格式以及原始格式；<br>2.将改名后的文件《就有密码》.pptx.zip解压缩，得到一个《就有密码》.pptx 文件夹；<br>3.切换到\ppt 之下，用记事本开启 presentation.xml 文件；<br>4.把 &lt;p:modifyVerifier … /&gt;整块选中并删除保存；<br>5.返回 《就有密码》.pptx 文件夹第一层，注意，不要退出该文件夹之外；<br>6.选择所有文件，将其添加为 zip 压缩包格式，压缩方式为 标准；<br>7.将压缩包重命名为 xxxx.pptx，此时的pptx文件即为无密码保护的演示文稿，密码删除成功~  </p><h3 id="注意"><a href="#注意" class="headerlink" title="注意!"></a>注意!</h3><hr><p><strong>1.第一步时，一定要更名为.zip为尾缀而不是以rar为结尾</strong><br><strong>2.第六步时，一定是添加为zip压缩包格式，不可是rar格式</strong> </p><h3 id="破解PPT2003"><a href="#破解PPT2003" class="headerlink" title="破解PPT2003"></a>破解PPT2003</h3><hr><p>破解PPT2003的软件很多，最好用的是advancedoffice password recovery pro</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;一个不用软件就能破解pptx和ppsx格式的方法&quot;&gt;&lt;a href=&quot;#一个不用软件就能破解pptx和ppsx格式的方法&quot; class=&quot;headerlink&quot; title=&quot;一个不用软件就能破解pptx和ppsx格式的方法&quot;&gt;&lt;/a&gt;一个不用软件就能破解pptx
+      
+    
+    </summary>
+    
+      <category term="破解" scheme="https://hdsker.ml/categories/%E7%A0%B4%E8%A7%A3/"/>
+    
+    
+      <category term="搬运" scheme="https://hdsker.ml/tags/%E6%90%AC%E8%BF%90/"/>
+    
+      <category term="pptx&amp;ppsx" scheme="https://hdsker.ml/tags/pptx-ppsx/"/>
     
   </entry>
   
